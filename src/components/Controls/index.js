@@ -30,7 +30,7 @@ export const Controls = props => {
     });
 
     clearButton.addEventListener("click", () => {
-        props.clear();
+        props.clear(true);
     });
 
     let leftSide = html`

@@ -31,12 +31,18 @@ const onNextClick = (audios, preset) => {
 }
 
 const onPresetClick = (audios, preset) => {
+    console.log("CLICK");
     clearSoundTiles();
     if(preset.random) {
         if(preset.active) {
             preset.classList.remove("active");
             preset.active = false;
+            activePreset = undefined;
         } else {
+            if(activePreset) {
+                activePreset.classList.remove("active");
+                activePreset.active = false;
+            }
             let index = Math.floor(Math.random() * (audios.length - 1));
             audios[index].forEach(audio => {
                 soundTilesMap[audio.id].activate();
@@ -44,12 +50,18 @@ const onPresetClick = (audios, preset) => {
             })
             preset.classList.add("active");
             preset.active = true;
+            activePreset = preset;
         }
     } else {
         if(preset.active) {
             preset.classList.remove("active");
             preset.active = false;
+            activePreset = undefined;
         } else {
+            if(activePreset) {
+                activePreset.classList.remove("active");
+                activePreset.active = false;
+            }
             audios[0].forEach(audio => {
                 soundTilesMap[audio.id].activate();
                 soundTilesMap[audio.id].setVolume(audio.volume, true);
@@ -57,6 +69,7 @@ const onPresetClick = (audios, preset) => {
             preset.currentIndex = 0;
             preset.classList.add("active");
             preset.active = true;
+            activePreset = preset;
         }
     }
 };
@@ -68,7 +81,12 @@ const onChange = (id, value) => {
     soundTilesMap[id].setVolume(value, true);
 };
 
-const clearSoundTiles = () => {
+const clearSoundTiles = (all) => {
+    if(all && activePreset) {
+        activePreset.classList.remove("active");
+        activePreset.active = false;
+        activePreset = undefined;
+    }
     for(let key in soundTilesMap) {
         if(soundTilesMap[key].active) {
             soundTilesMap[key].activate();
