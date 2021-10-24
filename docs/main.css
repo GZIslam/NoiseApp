@@ -9,17 +9,31 @@ html, body, * {
 }
 
 body {
-  width: 100vw;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 25s ease infinite;
   height: 100vh;
+  width: 100vw;
 }
 body button {
   cursor: pointer;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/App/index.sass ***!
   \************************************************************************************************************************/
 .app {
-  background: linear-gradient(154.98deg, #7DE2FC 3%, #B9B6E5 80%);
   width: 100%;
   height: 100%;
   display: flex;
