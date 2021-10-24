@@ -1,13 +1,12 @@
 import "./index.sass";
 
-import { content as soundTiles} from "./base/sound-tile-content";
+import { content as soundTiles } from "./contents/sound-tile";
+import { content as presets } from "./contents/presets";
 import { App } from "./components/App";
-import { SoundTile } from "./components/SoundTile";
-
 
 const app = App();
 
-// app.addPresets(presets);
+app.addPresets(presets);
 app.addSoundTiles(soundTiles);
 
 document.body.append(app);

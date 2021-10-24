@@ -4,10 +4,22 @@ import { html, o } from "sinuous";
 import { map } from "sinuous/map"
 import { Controls } from "../Controls";
 import { SoundTile } from "../SoundTile";
+import { Preset } from "../Preset";
 
 let soundTilesMap = {};
+let activePreset = undefined;
 
-const onClick = id => {
+const onNextClick = (audios, currentIndex) => {
+
+}
+
+const onPresetClick = (audios) => {
+    audios[0].forEach(audio => {
+        console.log(audio);
+    })
+};
+
+const onSoundTileClick = id => {
     soundTilesMap[id].activate();
 }
 const onChange = (id, value) => {
@@ -51,8 +63,17 @@ export const App = props => {
         </div>
     `;
 
+    element.addPreset = item => {
+        let preset = Preset(item, onPresetClick, onNextClick);
+        presetsPlace.append(preset);
+    };
+    
+    element.addPresets = items => {
+        items.forEach(item => element.addPreset(item));
+    }
+
     element.addSoundTile = item => {
-        let soundTile = SoundTile(item, onClick, onChange);
+        let soundTile = SoundTile(item, onSoundTileClick, onChange);
         soundTilesMap[item.id] = soundTile;
 
         let list = soundTiles();
@@ -62,9 +83,7 @@ export const App = props => {
     };
 
     element.addSoundTiles = items => {
-        items.forEach(item => {
-            element.addSoundTile(item);
-        });
+        items.forEach(item => element.addSoundTile(item));
     }
 
     return element;
