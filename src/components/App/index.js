@@ -94,10 +94,12 @@ export const App = props => {
             ${map(soundTiles, soundTile => soundTile)}
         </div>
     `;
+
+    let logo = html`<img class="logo" src="./assets/img/Logo.svg"/>`
     
     let element = html`
         <div class="app">
-            <div class="logo"></div>
+            ${logo}
             ${controls}
             ${presetsPlace}
             ${savedPlace}
