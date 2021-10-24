@@ -9,14 +9,56 @@ import { Preset } from "../Preset";
 let soundTilesMap = {};
 let activePreset = undefined;
 
-const onNextClick = (audios, currentIndex) => {
-
+const onNextClick = (audios, preset) => {
+    clearSoundTiles();
+    if(preset.random) {
+        let index = Math.floor(Math.random() * (audios.length - 1));
+        audios[index].forEach(audio => {
+            soundTilesMap[audio.id].activate();
+            soundTilesMap[audio.id].setVolume(audio.volume, true);
+        })
+    } else {
+        if(preset.currentIndex + 1 > audios.length - 1) {
+            preset.currentIndex = 0;
+        } else {
+            preset.currentIndex++;
+        }
+        audios[preset.currentIndex].forEach(audio => {
+            soundTilesMap[audio.id].activate();
+            soundTilesMap[audio.id].setVolume(audio.volume, true);
+        })
+    }
 }
 
-const onPresetClick = (audios) => {
-    audios[0].forEach(audio => {
-        console.log(audio);
-    })
+const onPresetClick = (audios, preset) => {
+    clearSoundTiles();
+    if(preset.random) {
+        if(preset.active) {
+            preset.classList.remove("active");
+            preset.active = false;
+        } else {
+            let index = Math.floor(Math.random() * (audios.length - 1));
+            audios[index].forEach(audio => {
+                soundTilesMap[audio.id].activate();
+                soundTilesMap[audio.id].setVolume(audio.volume, true);
+            })
+            preset.classList.add("active");
+            preset.active = true;
+        }
+    } else {
+        if(preset.active) {
+            preset.classList.remove("active");
+            preset.active = false;
+        } else {
+            audios[0].forEach(audio => {
+                soundTilesMap[audio.id].activate();
+                soundTilesMap[audio.id].setVolume(audio.volume, true);
+            })
+            preset.currentIndex = 0;
+            preset.classList.add("active");
+            preset.active = true;
+        }
+    }
 };
 
 const onSoundTileClick = id => {

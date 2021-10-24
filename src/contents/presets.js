@@ -2,19 +2,20 @@ export const content = [
     {
         name: "Random",
         icon: "./assets/img/random.svg",
+        random: true,
         audios: [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.3
+                    volume: 30
                 }
             ]
         ]
@@ -26,75 +27,75 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "04_forest",
-                    volume: 0.3
+                    volume: 30
                 }
             ],
             [
                 {
                     id: "10_river",
-                    volume: 0.2
+                    volume: 20
                 },
                 {
                     id: "12_cikades",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "13_frogs",
-                    volume: 0.4
+                    volume: 40
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.4
+                    volume: 40
                 }
             ],
             [
                 {
                     id: "03_wind",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "04_forest",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "10_river",
-                    volume: 0.3
+                    volume: 30
                 }
             ],
             [
                 {
                     id: "24_cafe",
-                    volume: 0.2
+                    volume: 20
                 },
                 {
                     id: "25_street",
-                    volume: 0.7
+                    volume: 70
                 },
                 {
                     id: "26_rain_in_cafe",
-                    volume: 0.4
+                    volume: 40
                 }
             ],
             [
                 {
                     id: "01_rain",
-                    volume: 0.7
+                    volume: 70
                 },
                 {
                     id: "10_river",
-                    volume: 0.4
+                    volume: 40
                 },
                 {
                     id: "14_thunder_night",
-                    volume: 0.4
+                    volume: 40
                 }
             ],
         ]
@@ -106,57 +107,43 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.8
+                    volume: 80
                 }
             ],
             [
                 {
                     id: "14_thunder_night",
-                    volume: 0.4
+                    volume: 40
                 },
                 {
                     id: "07_still_sea",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "12_cikades",
-                    volume: 0.5
+                    volume: 50
                 }
             ],
             [
                 {
                     id: "17_campfire",
-                    volume: 1.0
+                    volume: 100
                 },
                 {
                     id: "12_cikades",
-                    volume: 0.2
+                    volume: 20
                 },
                 {
                     id: "23_brown_noise",
-                    volume: 0.1
-                }
-            ],
-            [
-                {
-                    id: "17_campfire",
-                    volume: 1.0
-                },
-                {
-                    id: "12_cikades",
-                    volume: 0.2
-                },
-                {
-                    id: "23_brown_noise",
-                    volume: 0.1
+                    volume: 10
                 }
             ],
         ]
@@ -169,15 +156,15 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.3
+                    volume: 30
                 }
             ]
         ]
@@ -189,15 +176,15 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.3
+                    volume: 30
                 }
             ]
         ]
@@ -209,15 +196,15 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.3
+                    volume: 30
                 }
             ]
         ]
@@ -229,15 +216,15 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.3
+                    volume: 30
                 }
             ]
         ]
@@ -249,15 +236,15 @@ export const content = [
             [
                 {
                     id: "01_rain",
-                    volume: 0.5
+                    volume: 50
                 },
                 {
                     id: "02_thunder",
-                    volume: 0.3
+                    volume: 30
                 },
                 {
                     id: "17_campfire",
-                    volume: 0.3
+                    volume: 30
                 }
             ]
         ]

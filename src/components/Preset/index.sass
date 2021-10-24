@@ -1,0 +1,50 @@
+.preset
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-right: 20px
+    opacity: 0.5
+
+    button
+        visibility: hidden
+        background: rgba(255, 255, 255, 0.3)
+        color: #fff
+        width: 58px
+        height: 20px
+        border-radius: 4px
+        font-size: 11px
+        border: none
+        outline: none
+        margin-top: 12px
+        margin-bottom: 20px
+    
+    &.active
+        opacity: 1
+
+        button
+            visibility: visible
+
+    div
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: rgba(255, 255, 255, 0.15)
+        width: 160px
+        height: 96px
+        border-radius: 10px
+        margin-top: 20px
+        cursor: pointer
+
+        p
+            letter-spacing: 0.07em
+            color: #fff
+            font-size: 12px
+            padding-top: 8px
+            margin: 0
+        
+        img
+            width: 46px
+            height: 46px
+
