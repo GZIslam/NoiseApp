@@ -2,7 +2,7 @@ export const content = [
     {
         icon: "./assets/img/1.svg",
         audio: "./assets/audios/01_rain.mp3",
-        id: "01_rain"
+        id: "01_rain",
     },
     {
         icon: "./assets/img/2.svg",
