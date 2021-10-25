@@ -2,12 +2,20 @@ import "./index.sass";
 
 import { html } from "sinuous";
 
-let activeTab = undefined;
+let activeTab = {
+    tab: undefined,
+    button: undefined
+};
 
-const activateTab = (tab) => {
-    if(activeTab) activeTab.classList.remove("active");
+const activateTab = (tab, button) => {
+    if(activeTab.tab && activeTab.button) {
+        activeTab.tab.classList.remove("active");
+        activeTab.button.classList.remove("active");
+    }
     tab.classList.add("active");
-    activeTab = tab;
+    button.classList.add("active");
+    activeTab.tab = tab;
+    activeTab.button = button;
 };
 
 export const Controls = props => {
@@ -17,12 +25,11 @@ export const Controls = props => {
     let clearButton = html`<button>Clear</button>`;
 
     presetsButton.addEventListener("click", () => {
-        activateTab(props.presets);
-        console.log(props);
+        activateTab(props.presets, presetsButton);
     });
 
     savedButton.addEventListener("click", () => {
-        activateTab(props.saved);
+        activateTab(props.saved, savedButton);
     });
 
     saveButton.addEventListener("click", () => {
@@ -53,6 +60,8 @@ export const Controls = props => {
             ${rightSide}
         </div>
     `;
+
+    activateTab(props.presets, presetsButton);
 
     return element;
 };

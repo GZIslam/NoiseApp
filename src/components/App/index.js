@@ -31,7 +31,6 @@ const onNextClick = (audios, preset) => {
 }
 
 const onPresetClick = (audios, preset) => {
-    console.log("CLICK");
     clearSoundTiles();
     if(preset.random) {
         if(preset.active) {
